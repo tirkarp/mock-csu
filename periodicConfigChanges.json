@@ -1,0 +1,79 @@
+{
+    "apiVersion": "3.1",
+    "providerID": 000000000,
+    "timeStamp": "1970-01-01T00:00:00.000Z",
+    "udsConfigChanges": [
+        {
+            "esn": "cosmos01",
+            "addrs": [
+                0
+            ],
+            "operation": "UPDATE",
+            "boxID": "cosmos01"
+        },
+        {
+            "esn": "cosmos02",
+            "addrs": [
+                0
+            ],
+            "operation": "UPDATE",
+            "boxID": "cosmos02"
+        },
+        {
+            "esn": "cosmos03",
+            "addrs": [
+                0
+            ],
+            "operation": "DELETE",
+            "boxID": "cosmos03"
+        },
+        {
+            "esn": "cosmos04",
+            "addrs": [
+                0
+            ],
+            "operation": "UPDATE",
+            "boxID": "cosmos04"
+        },
+        {
+            "esn": "cosmos05",
+            "addrs": [
+                0
+            ],
+            "operation": "DELETE",
+            "boxID": "cosmos05"
+        },
+        {
+            "esn": "cosmos06",
+            "addrs": [
+                0
+            ],
+            "operation": "UPDATE",
+            "boxID": "cosmos06"
+        },
+        {
+            "esn": "cosmos07",
+            "addrs": [
+                0
+            ],
+            "operation": "DELETE",
+            "boxID": "cosmos07"
+        },
+        {
+            "esn": "cosmos08",
+            "addrs": [
+                0
+            ],
+            "operation": "UPDATE",
+            "boxID": "cosmos08"
+        },
+        {
+            "esn": "cosmos09",
+            "addrs": [
+                0
+            ],
+            "operation": "UPDATE",
+            "boxID": "cosmos09"
+        }
+    ]
+}
