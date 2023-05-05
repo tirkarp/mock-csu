@@ -1,7 +1,7 @@
 import copy
 import json
 
-from flask import Flask
+from flask import Flask, send_file
 
 app = Flask(__name__)
 
@@ -40,3 +40,7 @@ def periodicUDSConfigStatus(esn, address, box_id):
     else:
         uds_config_changes["udsConfigChanges"].pop(index[0])
         return ("OK", 200)
+
+@app.route("/cals/pendingCal/<esn>/<int:address>/ZIP")
+def periodicUDSConfigStatus(esn, address, box_id):
+    return send_file("67384768_0.zip", "application/zip")
