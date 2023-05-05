@@ -42,5 +42,5 @@ def periodicUDSConfigStatus(esn, address, box_id):
         return ("OK", 200)
 
 @app.route("/cals/pendingCal/<esn>/<int:address>/ZIP")
-def periodicUDSConfigStatus(esn, address, box_id):
+def pendingCal(esn, address, box_id):
     return send_file("67384768_0.zip", "application/zip")
