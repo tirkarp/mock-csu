@@ -40,6 +40,12 @@ def periodicUDSConfigStatus(esn, address, box_id):
     else:
         uds_config_changes["udsConfigChanges"].pop(index[0])
         return ("OK", 200)
+    
+
+@app.route("/cals/calStatus/<esn>/<int:address>/<box_id>")
+def calStatus(esn, address, box_id):
+    return ("OK", 200)
+
 
 @app.route("/cals/pendingCal/<esn>/<int:address>/ZIP")
 def pendingCal(esn, address, box_id):
