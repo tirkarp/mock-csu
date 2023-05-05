@@ -48,5 +48,5 @@ def calStatus(esn, address, box_id):
 
 
 @app.route("/cals/pendingCal/<esn>/<int:address>/ZIP")
-def pendingCal(esn, address, box_id):
+def pendingCal(esn, address):
     return send_file("67384768_0.zip", "application/zip")
