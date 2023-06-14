@@ -58,5 +58,5 @@ def paccar_200():
 
 
 @app.route("/paccar-404")
-def paccar_200():
+def paccar_404():
     return ("Not Found", 404)
