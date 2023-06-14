@@ -63,5 +63,5 @@ def paccar_404():
 
 
 @app.route("/paccar-400/supplierti", methods=["GET", "POST"])
-def paccar_404():
+def paccar_400():
     return ("Bad Request", 400)
