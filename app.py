@@ -50,3 +50,13 @@ def calStatus(esn, address, box_id):
 @app.route("/cals/pendingCal/<esn>/<int:address>/ZIP")
 def pendingCal(esn, address):
     return send_file("67384768_0.zip", "application/zip")
+
+
+@app.route("/paccar-200")
+def paccar_200():
+    return ("OK", 200)
+
+
+@app.route("/paccar-404")
+def paccar_200():
+    return ("Not Found", 404)
