@@ -60,3 +60,7 @@ def paccar_200():
 @app.route("/paccar-404/supplierti", methods=["GET", "POST"])
 def paccar_404():
     return ("Not Found", 404)
+
+@app.route("/paccar-400/supplierti", methods=["GET", "POST"])
+def paccar_404():
+    return ("Bad Request", 400)
