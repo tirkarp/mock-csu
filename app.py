@@ -52,11 +52,11 @@ def pendingCal(esn, address):
     return send_file("67384768_0.zip", "application/zip")
 
 
-@app.route("/paccar-200", methods=["GET", "POST"])
+@app.route("/paccar-200/supplierti", methods=["GET", "POST"])
 def paccar_200():
     return ("OK", 200)
 
 
-@app.route("/paccar-404", methods=["GET", "POST"])
+@app.route("/paccar-404/supplierti", methods=["GET", "POST"])
 def paccar_404():
     return ("Not Found", 404)
