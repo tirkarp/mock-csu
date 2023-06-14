@@ -65,3 +65,8 @@ def paccar_404():
 @app.route("/paccar-400/supplierti", methods=["GET", "POST"])
 def paccar_400():
     return ("Bad Request", 400)
+
+
+@app.route("/paccar-401/supplierti", methods=["GET", "POST"])
+def paccar_401():
+    return ("Unauthorized", 401)
