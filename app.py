@@ -1,5 +1,6 @@
 import copy
 import json
+import time
 
 from flask import Flask, send_file
 
@@ -70,3 +71,9 @@ def paccar_400():
 @app.route("/paccar-401/supplierti", methods=["GET", "POST"])
 def paccar_401():
     return ("Unauthorized", 401)
+
+
+@app.route("/timeout", methods=["GET", "POST"])
+def paccar_timeout():
+    time.sleep(100)
+    return ("Request Timeout", 408)
