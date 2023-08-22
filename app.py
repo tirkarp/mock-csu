@@ -77,3 +77,9 @@ def paccar_401():
 def paccar_timeout():
     time.sleep(100)
     return ("This should be 408 or 502, not 200. Timeout test failed.", 200)
+
+
+@app.route("/timeout/<int:val>", methods=["GET", "POST"])
+def paccar_timeout_value(val):
+    time.sleep(val)
+    return ("This should be 408 or 502, not 200. Timeout test failed.", 200)
