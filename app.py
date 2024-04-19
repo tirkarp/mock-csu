@@ -35,8 +35,13 @@ def reset():
     uds_config_changes = copy.deepcopy(original_uds_config_changes)
 
     global uds_config
-    original_uds_config = copy.deepcopy(original_uds_config)
+    uds_config = copy.deepcopy(original_uds_config)
 
+    return ("OK", 200)
+
+
+@app.route("/add-esn", methods=["GET", "POST"])
+def add_esn():
     return ("OK", 200)
 
 
