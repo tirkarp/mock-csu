@@ -4,7 +4,7 @@
     "timeStamp": "2024-04-19T20:45:07.712Z",
     "esn": "64309088",
     "addr": 0,
-    "boxID": "test-box-id",
+    "boxID": "cosmospaccar0002",
     "readBuckets": [
         {
             "period": 3600,
