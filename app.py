@@ -46,9 +46,9 @@ def periodicUDSConfigChanges():
 
 
 @app.route("/periodicUDSConfig/<esn>/<int:address>")
-def periodicUDSConfig(esn: str, box_id: int):
+def periodicUDSConfig(esn: str, address: int):
     uds_config["esn"] = esn
-    uds_config["boxID"] = box_id
+    uds_config["addr"] = address
     return uds_config
 
 
