@@ -7,6 +7,7 @@ from flask import Flask, send_file
 app = Flask(__name__)
 
 
+# periodicUDSConfigChanges
 with open("periodicUDSConfigChanges.json") as f:
     uds_config_changes_content = f.read()
 
@@ -14,6 +15,15 @@ uds_config_changes = json.loads(uds_config_changes_content)
 original_uds_config_changes = copy.deepcopy(uds_config_changes)
 
 
+# periodicUDSConfig
+with open("periodicUDSConfig.json") as f:
+    uds_config_content = f.read()
+
+uds_config = json.loads(uds_config_content)
+original_uds_config = copy.deepcopy(uds_config)
+
+
+# routing
 @app.route("/")
 def hello():
     return "HELLO"
@@ -23,6 +33,10 @@ def hello():
 def reset():
     global uds_config_changes
     uds_config_changes = copy.deepcopy(original_uds_config_changes)
+
+    global uds_config
+    original_uds_config = copy.deepcopy(original_uds_config)
+
     return ("OK", 200)
 
 
@@ -31,8 +45,15 @@ def periodicUDSConfigChanges():
     return uds_config_changes
 
 
+@app.route("/periodicUDSConfig/<esn>/<int:address>")
+def periodicUDSConfig(esn: str, box_id: int):
+    uds_config["esn"] = esn
+    uds_config["boxID"] = box_id
+    return uds_config
+
+
 @app.route("/periodicUDSConfigStatus/<esn>/<int:address>/<box_id>")
-def periodicUDSConfigStatus(esn, address, box_id):
+def periodicUDSConfigStatus(esn: str, address: int, box_id: str):
     l = uds_config_changes["udsConfigChanges"]
     index = [i for i, x in enumerate(l) if x["esn"] == esn and x["addrs"][0] == address and x["boxID"] == box_id]
 
