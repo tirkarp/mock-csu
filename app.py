@@ -57,15 +57,10 @@ def periodicUDSConfig(esn: str, address: int):
     uds_config["esn"] = esn
     uds_config["addr"] = address
 
-    esn_obj = list(
-        filter(
-            lambda x: x["esn"] == esn,
-            uds_config_changes["udsConfigChanges"]
-        )
-    )
+    box_id_list = [x["boxID"] for x in uds_config_changes["udsConfigChanges"] if x["esn"] == esn]
 
-    if esn_obj:
-        box_id = esn_obj[0]["boxID"]
+    if box_id_list:
+        box_id = box_id_list[0]
         uds_config["boxID"] = box_id
 
     return uds_config
