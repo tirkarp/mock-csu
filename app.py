@@ -2,7 +2,7 @@ import copy
 import json
 import time
 
-from flask import Flask, send_file
+from flask import Flask, request, send_file
 
 app = Flask(__name__)
 
@@ -42,6 +42,8 @@ def reset():
 
 @app.route("/add-esn", methods=["GET", "POST"])
 def add_esn():
+    esn_obj = request.get_json(force=True)
+    uds_config_changes["udsConfigChanges"].append(esn_obj)
     return ("OK", 200)
 
 
