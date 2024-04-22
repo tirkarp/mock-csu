@@ -57,11 +57,14 @@ def periodicUDSConfig(esn: str, address: int):
     uds_config["esn"] = esn
     uds_config["addr"] = address
 
-    box_id_list = [x["boxID"] for x in uds_config_changes["udsConfigChanges"] if x["esn"] == esn]
+    esn_obj_list = [x for x in uds_config_changes["udsConfigChanges"] if x["esn"] == esn]
 
-    if box_id_list:
-        box_id = box_id_list[0]
-        uds_config["boxID"] = box_id
+    if esn_obj_list:
+        esn_obj = esn_obj_list[0]
+        uds_config["boxID"] = esn_obj["boxID"]
+
+        if esn_obj["operation"] == "DELETE":
+            return ("Cannot downloan DELETE config", 500)
 
     return uds_config
 
