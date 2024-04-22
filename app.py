@@ -69,7 +69,7 @@ def periodicUDSConfig(esn: str, address: int):
     return uds_config
 
 
-@app.route("/periodicUDSConfigStatus/<esn>/<int:address>/<box_id>")
+@app.route("/periodicUDSConfigStatus/<esn>/<int:address>/<box_id>", methods=["GET", "POST"])
 def periodicUDSConfigStatus(esn: str, address: int, box_id: str):
     l = uds_config_changes["udsConfigChanges"]
     index = [i for i, x in enumerate(l) if x["esn"] == esn and x["addrs"][0] == address and x["boxID"] == box_id]
