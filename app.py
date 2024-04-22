@@ -64,7 +64,7 @@ def periodicUDSConfig(esn: str, address: int):
         uds_config["boxID"] = esn_obj["boxID"]
 
         if esn_obj["operation"] == "DELETE":
-            return ("Cannot downloan DELETE config", 500)
+            return ("Cannot download DELETE config", 500)
 
     return uds_config
 
