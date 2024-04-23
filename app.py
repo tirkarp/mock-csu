@@ -48,7 +48,7 @@ def add_esn():
 
 
 @app.route("/add-esns", methods=["GET", "POST"])
-def add_esn():
+def add_esns():
     esn_objs = request.get_json(force=True)
     uds_config_changes["udsConfigChanges"].extend(esn_objs)
     return ("OK", 200)
